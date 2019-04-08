@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="byType"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<context:component-scan base-package="com.prueba" />
+
+	<bean id="autor1" class="com.prueba.examen.Autor">
+		<constructor-arg index="0" value="Pepito Pérez" type="java.lang.String" />
+		<constructor-arg index="1" value="Policiaco" type="java.lang.String" />
+		<constructor-arg index="2" value="España" type="java.lang.String" />
+	</bean>
+
+	<bean id="autor2" class="com.prueba.examen.Autor">
+		<constructor-arg index="0" value="Tony Pony" type="java.lang.String" />
+		<constructor-arg index="1" value="Poesía" type="java.lang.String" />
+		<constructor-arg index="2" value="EEUU" type="java.lang.String" />
+	</bean>
+	<bean class="com.prueba.examen.AdviceLibro" id="mensaje"/>
+
+	<aop:aspectj-autoproxy />
+
+</beans>
